@@ -114,8 +114,3 @@ docker-compose up -d --build
 - Backend API: proxied through Nginx at `/api/`
 
 ---
-
-## 👨‍💻 Author
-
-**Harshath Raghava** — ANITS B.Tech Student  
-Built as a campus community project to enhance student collaboration through AI.
