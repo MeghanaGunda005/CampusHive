@@ -1,0 +1,30 @@
+# ============================================
+# Campus Hive — Render.com Blueprint Config
+# ============================================
+# One-click deploy: Backend API only
+# Frontend: Deploy separately on Vercel
+# Database: Neon PostgreSQL (auto-wake, free)
+# ============================================
+
+services:
+  - type: web
+    name: campus-hive-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: campus_hive.settings
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: "postgresql://neondb_owner:npg_SDIiwVK7lY2c@ep-soft-math-a1k9edaf-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+      - key: GEMINI_API_KEY
+        value: "AIzaSyAC3BI2WFqTFUmtBoaNR4ogy-d4OVH4o2c"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: ADMIN_PASSWORD
+        value: "adminpassword123"
